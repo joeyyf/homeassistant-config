@@ -1,0 +1,10 @@
+entities:
+  - name: router
+    url: http://fritz.box/
+    icon: mdi:router-wireless
+  - name: nas
+    url: http://nas:5000
+    icon: mdi:nas
+  - name: pihole
+    url: http://webhost/admin/
+    icon: mdi:server-security

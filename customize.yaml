@@ -1,0 +1,198 @@
+### customize ###
+
+# groups
+group.input_networkalarm:
+  friendly_name: Alarm bei Netzwerklast
+
+group.input_catfountain:
+  friendly_name: Katzenbrunnen
+
+group.kitchen:
+  friendly_name: Kueche
+
+group.trackers:
+  friendly_name: Family
+
+group.weather:
+  friendly_name: Wetter
+
+group.weather_forecast_4h:
+  friendly_name: Vorhersage (4 Std.)
+
+group.weather_forecast_24h:
+  friendly_name: Vorhersage (24 Std.)
+
+group.network_fritzbox:
+  friendly_name: FritzBox
+
+group.network_nas:
+  friendly_name: NAS
+
+group.network_hass:
+  friendly_name: Home Assistant
+
+group.network_webhost:
+  friendly_name: Webhost / PiHole
+
+group.network_links:
+  friendly_name: Links
+
+group.commute_his:
+  friendly_name: Pendelei Joey
+
+group.commute_her:
+  friendly_name: Pendelei Puh
+
+# switches
+switch.kitchen_01:
+  friendly_name: Katzenbrunnen
+  icon: mdi:cat
+
+# sensors
+sensor.commute_his:
+  friendly_name: Arbeitsweg
+
+sensor.webhost_sensor_template:
+  friendly_name: Status
+  icon: mdi:checkbox-marked-circle-outline
+
+sensor.nasmonitor:
+  friendly_name: NAS Monitor
+  icon: mdi:nas
+
+sensor.netmonitor:
+  friendly_name: Netzwerk Monitor
+
+sensor.netmonitor_downrate_sensor_template:
+  friendly_name: Max. down
+  icon: mdi:arrow-down-bold
+
+sensor.netmonitor_downrate_current_sensor_template:
+  friendly_name: Aktuell down
+  icon: mdi:chart-line-variant
+
+sensor.netmonitor_uprate_sensor_template:
+  friendly_name: Max. up
+  icon: mdi:arrow-up-bold
+
+sensor.callmonitor:
+  friendly_name: Anruf Monitor
+  icon: mdi:phone
+
+sensor.weather_yr_symbol:
+  friendly_name: Jetzt
+
+sensor.weather_yr_future4h_symbol:
+  friendly_name: In 4 Std.
+
+sensor.weather_yr_future4h_temperature:
+  friendly_name: Temperatur
+
+sensor.weather_yr_future24h_symbol:
+  friendly_name: In 24 Std.
+
+sensor.weather_yr_future24h_temperature:
+  friendly_name: Temperatur
+
+sensor.weather_yr_temperature:
+  friendly_name: Temperatur
+
+sensor.weather_yr_cloudiness:
+  friendly_name: Wolkig
+  icon: mdi:weather-cloudy
+
+sensor.weather_yr_humidity:
+  friendly_name: Luftfeuchtigkeit
+  icon: mdi:weather-rainy
+
+sensor.weather_yr_wind_direction:
+  friendly_name: Windrichtung
+  icon: mdi:weather-windy-variant
+
+sensor.weather_yr_wind_speed:
+  friendly_name: Windgeschw.
+  icon: mdi:weather-windy
+
+sensor.weather_yr_fog:
+  friendly_name: Nebel
+  icon: mdi:weather-fog
+
+sensor.weather_yr_precipitation:
+  friendly_name: Niederschlag
+  icon: mdi:weather-pouring
+
+sensor.weather_yr_pressure:
+  friendly_name: Luftdruck
+
+sensor.cpu_load_total:
+  friendly_name: CPU
+
+sensor.memory_usage_real:
+  friendly_name: Memory
+
+sensor.network_up:
+  friendly_name: Network up
+
+sensor.network_down:
+  friendly_name: Network down
+
+sensor.name_sda:
+  friendly_name: Name sda
+
+sensor.status_sda:
+  friendly_name: Status sda
+
+sensor.temperature_sda:
+  friendly_name: Temp. sda
+
+sensor.name_sdb:
+  friendly_name: Name sdb
+
+sensor.status_sdb:
+  friendly_name: Status sdb
+
+sensor.temperature_sdb:
+  friendly_name: Temp. sdb
+
+sensor.piholemonitor_ads_blocked_today:
+  friendly_name: Werbungen geblockt (24h)
+
+sensor.piholemonitor_ads_percentage_blocked_today:
+  friendly_name: Werbungen geblockt (24h)
+
+sensor.piholemonitor_dns_unique_clients:
+  friendly_name: Anzahl einzigart. Geräte
+
+sensor.piholemonitor_domains_blocked:
+  friendly_name: Anzahl geblockter Domänen
+
+# media_players
+media_player.samsungsmarttv:
+  friendly_name: Samsung Smart TV
+
+# cameras
+camera.weather_stillimage_00:
+  friendly_name: Deutschland
+
+camera.weather_stillimage_01:
+  friendly_name: Europa
+
+camera.commute_a96_asinning:
+  friendly_name: A96 - AS Inning
+
+camera.commute_a96_aswoerthsee:
+  friendly_name: A96 - AS Woerthsee
+
+# input_booleans
+input_boolean.catfountain_automatic:
+  icon: mdi:light-switch
+
+input_boolean.catfountain_notify:
+  icon: mdi:message-bulleted
+
+input_boolean.netmonitor_downrate_current_alarm_max_notify:
+  icon: mdi:message-bulleted
+
+# input_numbers
+input_number.netmonitor_downrate_current_alarm_max:
+  icon: mdi:chart-line-variant

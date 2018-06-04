@@ -1,0 +1,13 @@
+- name: mailnotifier
+  platform: smtp
+  server: mail.gandi.net
+  port: 465
+  timeout: 15
+  sender: info@reindlfink.com
+  encryption: tls
+  starttls: True
+  username: !secret smtp_user
+  password: !secret smtp_password
+  recipient:
+    - j.fink@reindlfink.com
+  sender_name: Home Assistant

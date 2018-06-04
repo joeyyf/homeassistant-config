@@ -1,0 +1,7 @@
+netmonitor_downrate_current_alarm_max:
+  name: Max. down
+  initial: 15
+  min: 0
+  max: 17
+  step: 1
+  unit_of_measurement: Mbit/s

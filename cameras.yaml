@@ -1,0 +1,15 @@
+- platform: generic
+  name: weather_stillimage_00
+  still_image_url: https://api.sat24.com/crop?type=rainTMC&lat=48.0508&lon=10.8704&width=300&height=300&zoom=1.00&continent=eu
+
+- platform: generic
+  name: weather_stillimage_01
+  still_image_url: https://api.sat24.com/mostrecent/EU/visual5hdcomplete' width=250 height=250
+
+- platform: generic
+  name: commute_a96_asinning
+  still_image_url: http://www.bayerninfo.de/webcams/images/a96lindau-munich/mobil200172.jpg
+
+- platform: generic
+  name: commute_a96_aswoerthsee
+  still_image_url: http://www.bayerninfo.de/webcams/images/a96lindau-munich/mobil200163.jpg

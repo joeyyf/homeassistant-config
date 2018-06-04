@@ -1,0 +1,4 @@
+- platform: samsungtv
+  name: samsungsmarttv
+  host: 192.168.178.248
+  port: 8001

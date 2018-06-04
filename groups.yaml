@@ -1,0 +1,152 @@
+### groups ###
+# views
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:home
+  entities:
+    - group.livingroom
+    - group.kitchen
+    - group.trackers
+
+weather_view:
+  view: yes
+  name: Wetter
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.weather
+    - group.weather_forecast_4h
+    - group.weather_forecast_24h
+    - group.weather_stillimage
+
+network_view:
+  view: yes
+  name: Netzwerk
+  icon: mdi:network
+  entities:
+    - group.network_links
+    - group.network_fritzbox
+    - group.network_webhost
+    - group.network_hass
+    - group.network_nas
+
+commute_view:
+  view: yes
+  name: Arbeitsweg
+  icon: mdi:train
+  entities:
+    #- group.commute_his
+    - group.commute_her
+
+input_view:
+  view: yes
+  name: Input
+  icon: mdi:toggle-switch-off
+  entities:
+    - group.input_catfountain
+    - group.input_networkalarm
+
+# groups
+weather:
+  entities:
+    - sensor.weather_yr_symbol
+    - sensor.weather_yr_temperature
+    - sensor.weather_yr_cloudiness
+    - sensor.weather_yr_humidity
+    - sensor.weather_yr_wind_direction
+    - sensor.weather_yr_wind_speed
+    - sensor.weather_yr_fog
+    - sensor.weather_yr_precipitation
+    - sensor.weather_yr_pressure
+
+weather_forecast_4h:
+  entities:
+    - sensor.weather_yr_future4h_symbol
+    - sensor.weather_yr_future4h_temperature
+
+weather_forecast_24h:
+  entities:
+    - sensor.weather_yr_future24h_symbol
+    - sensor.weather_yr_future24h_temperature
+
+weather_stillimage:
+  entities:
+    - camera.weather_stillimage_00
+    - camera.weather_stillimage_01
+
+network_fritzbox:
+  entities:
+    - sensor.netmonitor
+    - sensor.callmonitor
+    - sensor.netmonitor_downrate_sensor_template
+    - sensor.netmonitor_uprate_sensor_template
+    - sensor.netmonitor_downrate_current_sensor_template
+
+network_nas:
+  entities:
+    - sensor.cpu_load_total
+    - sensor.memory_usage_real
+    - sensor.network_up
+    - sensor.network_down
+    - sensor.name_sda
+    - sensor.status_sda
+    - sensor.temperature_sda
+    - sensor.name_sdb
+    - sensor.status_sdb
+    - sensor.temperature_sdb
+
+network_hass:
+  entities:
+    - sensor.memory_use_percent
+    - sensor.processor_use
+    - sensor.network_in
+    - sensor.network_out
+    - sensor.last_boot
+    - sensor.since_last_boot
+
+network_webhost:
+  entities:
+    #- device_tracker.webhost
+    - sensor.webhost_sensor_template
+    - sensor.piholemonitor_ads_blocked_today
+    - sensor.piholemonitor_ads_percentage_blocked_today
+    - sensor.piholemonitor_dns_unique_clients
+    - sensor.piholemonitor_domains_blocked
+
+network_links:
+  entities:
+    - weblink.router
+    - weblink.nas
+    - weblink.pihole
+
+kitchen:
+  entities:
+    - switch.kitchen_01
+
+livingroom:
+  entities:
+    - media_player.samsungsmarttv
+
+#commute_his:
+#  entities:
+#    - sensor.commute_his
+
+commute_her:
+  entities:
+    - camera.commute_a96_asinning
+    - camera.commute_a96_aswoerthsee
+
+input_catfountain:
+  entities:
+    - input_boolean.catfountain_automatic
+    - input_boolean.catfountain_notify
+
+input_networkalarm:
+  entities:
+    - input_boolean.netmonitor_downrate_current_alarm_max_notify
+    - input_number.netmonitor_downrate_current_alarm_max
+
+trackers:
+  entities:
+    - device_tracker.joey_s8
+    - device_tracker.annikasiphone
