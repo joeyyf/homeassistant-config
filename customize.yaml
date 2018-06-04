@@ -177,11 +177,11 @@ camera.weather_stillimage_00:
 camera.weather_stillimage_01:
   friendly_name: Europa
 
-camera.commute_a96_asinning:
-  friendly_name: A96 - AS Inning
+camera.commute_highway_01:
+  friendly_name: !secret commute_highway_01
 
-camera.commute_a96_aswoerthsee:
-  friendly_name: A96 - AS Woerthsee
+camera.commute_highway_02:
+  friendly_name: !secret commute_highway_02
 
 # input_booleans
 input_boolean.catfountain_automatic:

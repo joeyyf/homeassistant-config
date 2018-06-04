@@ -133,8 +133,8 @@ livingroom:
 
 commute_her:
   entities:
-    - camera.commute_a96_asinning
-    - camera.commute_a96_aswoerthsee
+    - camera.commute_highway_01
+    - camera.commute_highway_02
 
 input_catfountain:
   entities:
@@ -148,5 +148,5 @@ input_networkalarm:
 
 trackers:
   entities:
-    - device_tracker.joey_s8
-    - device_tracker.annikasiphone
+    - device_tracker.his_s8
+    - device_tracker.her_iphone
