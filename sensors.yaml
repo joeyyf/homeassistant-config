@@ -70,11 +70,26 @@
     - unique_clients
     - domains_being_blocked
 
+- platform: version
+  name: version_current
+
   # templates
 - platform: template
   sensors:
+    googledns_template:
+      value_template: '{% if is_state("binary_sensor.googledns", "on") %} {{ states.binary_sensor.googledns.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
+      
     webhost_sensor_template:
       value_template: "{% if is_state('device_tracker.webhost', 'home') %}online{% else %}offline{% endif %}"
+
+    zerosensor01_sensor_template:
+      value_template: "{% if is_state('device_tracker.zerosensor01', 'home') %}online{% else %}offline{% endif %}"
+
+    office_temperature_template: #sensor.office_temperature is a HTTP sensor - only initialized by api call
+      value_template: "{% if states.sensor.office_temperature is defined %} {{ states.sensor.office_temperature.state | round(1) }} {% else %}Unbekannt{% endif %}"
+
+    office_humidity_template: #sensor.office_humidity is a HTTP sensor - only initialized by api call
+        value_template: "{% if states.sensor.office_humidity is defined %} {{ states.sensor.office_humidity.state | round(1) }} {% else %}Unbekannt{% endif %}"
 
     netmonitor_downrate_sensor_template:
       unit_of_measurement: 'Mbit/s'

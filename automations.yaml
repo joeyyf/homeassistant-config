@@ -1,50 +1,28 @@
-- alias: Turn on/off cat fountain
+- alias: Katzenbrunnen - Stündlich automatisch an/aus
   initial_state: True
   trigger:
     - platform: time
       # matches every hour whole
       minutes: 0
       seconds: 00
-#  condition:
-#    - condition: time
-#      after: '06:00:00'
-#      before: '24:00:00'
-  condition:
-    condition: state
-    entity_id: input_boolean.catfountain_automatic
-    state: 'on'
   action:
     - service: switch.toggle
       entity_id: switch.kitchen_01
 
-#- alias: Check cat fountain and send mail
-#  trigger:
-#    platform: state
-#    entity_id: switch.kitchen_01
-#  action:
-#    service: notify.mailnotifier
-#    data:
-#      title: "Notification: Status Katzenbrunnen"
-#      message: "Test"
-
-- alias: Check cat fountain and show notification
-  initial_state: True
+- alias: Katzenbrunnen - Anzeige
+  initial_state: False
   trigger:
     - platform: state
       entity_id: switch.kitchen_01
-  condition:
-    condition: state
-    entity_id: input_boolean.catfountain_notify
-    state: 'on'
   action:
     - service: persistent_notification.create
       data_template:
         title: "Notification: Status Katzenbrunnen"
         message: >
-          Katzenbrunnen ist jetzt {% if is_state('switch.kitchen_01', 'on') %}an{% else %}aus{% endif %} ({{now().strftime("%H:%M:%S")}})
+          'Katzenbrunnen ist jetzt {% if is_state('switch.kitchen_01', 'on') %}an{% else %}aus{% endif %} ({{now().strftime("%H:%M:%S")}})'
         notification_id: 'catfountain'
 
-- alias: Check network alarm
+- alias: Netzwerk - Alarm
   initial_state: True
   trigger:
     #check every 5 minutes
@@ -65,3 +43,45 @@
         title: "Notification: Status Netzwerk"
         message: 'Aktueller DownStream: {{ (states.sensor.netmonitor_downrate_current_sensor_template.state | float | round(1)) }} Mbit/s ({{now().strftime("%H:%M:%S")}})'
         notification_id: 'networkalarm'
+    - service: notify.mailnotifier
+      data:
+        title: "Notification: Status Netzwerk"
+        message: 'Aktueller DownStream: {{ (states.sensor.netmonitor_downrate_current_sensor_template.state | float | round(1)) }} Mbit/s ({{now().strftime("%H:%M:%S")}})'
+
+- alias: Theme - Aendern
+  id: switch_hass_template
+  trigger:
+    - platform: state
+      entity_id: input_select.hass_template
+    - platform: homeassistant
+      event: start
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "{{ states.input_select.hass_template.state }}"
+
+- alias: Theme - Tag-Nacht
+  id: day_to_night_theme
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'above_horizon'
+      to: 'below_horizon'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hass_template
+        option: 'dark'
+
+- alias: Theme - Nacht-Tag
+  id: night_to_day_theme
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'below_horizon'
+      to: 'above_horizon'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hass_template
+        option: 'default'

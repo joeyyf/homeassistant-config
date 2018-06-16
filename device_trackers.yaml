@@ -8,3 +8,4 @@
 - platform: ping
   hosts:
     webhost: 192.168.178.21
+    zerosensor01: 192.168.178.209

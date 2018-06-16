@@ -6,6 +6,7 @@ default_view:
   icon: mdi:home
   entities:
     - group.livingroom
+    - group.office
     - group.kitchen
     - group.trackers
 
@@ -14,6 +15,7 @@ weather_view:
   name: Wetter
   icon: mdi:weather-partlycloudy
   entities:
+    - group.weather_graphs
     - group.weather
     - group.weather_forecast_4h
     - group.weather_forecast_24h
@@ -25,9 +27,11 @@ network_view:
   icon: mdi:network
   entities:
     - group.network_links
+    - group.connectivity
     - group.network_fritzbox
     - group.network_webhost
     - group.network_hass
+    - group.network_zerosensor01
     - group.network_nas
 
 commute_view:
@@ -43,13 +47,17 @@ input_view:
   name: Input
   icon: mdi:toggle-switch-off
   entities:
-    - group.input_catfountain
+    - group.info
+    - group.theme
     - group.input_networkalarm
+    - group.all_automations
+    - group.all_switches
 
 # groups
 weather:
   entities:
     - sensor.weather_yr_symbol
+    - sun.sun
     - sensor.weather_yr_temperature
     - sensor.weather_yr_cloudiness
     - sensor.weather_yr_humidity
@@ -58,6 +66,10 @@ weather:
     - sensor.weather_yr_fog
     - sensor.weather_yr_precipitation
     - sensor.weather_yr_pressure
+
+weather_graphs:
+  entities:
+    - history_graph.temperature_graph
 
 weather_forecast_4h:
   entities:
@@ -113,11 +125,19 @@ network_webhost:
     - sensor.piholemonitor_dns_unique_clients
     - sensor.piholemonitor_domains_blocked
 
+network_zerosensor01:
+  entities:
+    - sensor.zerosensor01_sensor_template
+
 network_links:
   entities:
     - weblink.router
     - weblink.nas
     - weblink.pihole
+
+connectivity:
+  entities:
+    - sensor.googledns_template
 
 kitchen:
   entities:
@@ -127,26 +147,36 @@ livingroom:
   entities:
     - media_player.samsungsmarttv
 
+office:
+  entities:
+    - sensor.office_temperature_template
+    - sensor.office_humidity_template
+
+info:
+  entities:
+    - sensor.version_current
+
+
 #commute_his:
 #  entities:
 #    - sensor.commute_his
 
 commute_her:
   entities:
+    - camera.commute_highway_03
+    - camera.commute_highway_04
     - camera.commute_highway_01
     - camera.commute_highway_02
 
-input_catfountain:
-  entities:
-    - input_boolean.catfountain_automatic
-    - input_boolean.catfountain_notify
-
 input_networkalarm:
   entities:
-    - input_boolean.netmonitor_downrate_current_alarm_max_notify
     - input_number.netmonitor_downrate_current_alarm_max
 
 trackers:
   entities:
     - device_tracker.his_s8
     - device_tracker.her_iphone
+
+theme:
+  entities:
+    - input_select.hass_template

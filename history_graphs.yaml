@@ -1,0 +1,4 @@
+temperature_graph:
+  entities:
+    - sensor.weather_yr_temperature
+    - sensor.office_temperature_template

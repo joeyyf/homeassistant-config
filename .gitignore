@@ -3,6 +3,5 @@
 !.gitignore
 secrets.yaml
 known_devices.yaml
-cameras.yaml
 device_trackers.yaml
 weblinks.yaml

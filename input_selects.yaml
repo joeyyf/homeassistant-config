@@ -1,0 +1,7 @@
+hass_template:
+  name: Theme auswaehlen
+  options:
+   - default
+   - dark
+  initial: default
+  icon: mdi:theme-light-dark

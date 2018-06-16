@@ -1,15 +1,23 @@
 - platform: generic
   name: weather_stillimage_00
-  still_image_url: https://api.sat24.com/crop?type=rainTMC&lat=48.0508&lon=10.8704&width=300&height=300&zoom=1.00&continent=eu
+  still_image_url: !secret weather_url_00
 
 - platform: generic
   name: weather_stillimage_01
-  still_image_url: https://api.sat24.com/mostrecent/EU/visual5hdcomplete' width=250 height=250
+  still_image_url: !secret weather_url_01
 
 - platform: generic
   name: commute_highway_01
-  still_image_url: http://www.bayerninfo.de/webcams/images/a96lindau-munich/mobil200172.jpg
+  still_image_url: !secret commute_highway_01_url
 
 - platform: generic
   name: commute_highway_02
-  still_image_url: http://www.bayerninfo.de/webcams/images/a96lindau-munich/mobil200163.jpg
+  still_image_url: !secret commute_highway_02_url
+
+- platform: generic
+  name: commute_highway_03
+  still_image_url: !secret commute_highway_03_url
+
+- platform: generic
+  name: commute_highway_04
+  still_image_url: !secret commute_highway_04_url

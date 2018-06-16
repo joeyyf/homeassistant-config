@@ -1,0 +1,41 @@
+name: Demo Floorplan
+image: /local/custom_ui/floorplan/floorplan.svg
+stylesheet: /local/custom_ui/floorplan/floorplan.css
+
+last_motion_entity: sensor.template_last_motion
+last_motion_class: last-motion
+
+warnings:
+
+groups:
+  - name: Switches
+    entities:
+      - switch.kitchen_01
+    states:
+      - state: 'on'
+        class: 'switch-on'
+      - state: 'off'
+        class: 'switch-off'
+    action:
+     domain: switch
+     service: toggle
+
+  - name: Sensors
+    entities:
+      - sensor.cpu_load_total
+      - sensor.netmonitor
+      - sensor.webhost_sensor_template
+      - sensor.weather_yr_temperature
+      - sensor.zerosensor01_sensor_template
+      - sensor.callmonitor
+      - sensor.office_temperature_template
+    text_template: '${entity.state ? entity.state : "unbekannt"}'
+
+  - name: Media Players
+    entities:
+      - media_player.samsungsmarttv
+    states:
+      - state: 'on'
+        class: 'mediaplayer-on'
+      - state: 'off'
+        class: 'mediaplayer-off'

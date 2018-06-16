@@ -13,20 +13,15 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-#introduction:
+frontend: !include frontend.yaml
 
-# Enables the frontend
-frontend:
+panel_custom: !include panel_custom.yaml
 
 # Enables configuration UI
 config:
 
 http:
-  # Secrets are defined in the file secrets.yaml
-  # api_password: !secret http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: example.duckdns.org:8123
+  api_password: !secret http_api_password
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -58,19 +53,22 @@ sun:
 
 #logging
 logger:
-  default: critical
-  logs:
-    homeassistant.components.automation: debug
+#  default: critical
+#  logs:
+#    homeassistant.components.automation: debug
 
 sensor: !include sensors.yaml
+binary_sensor: !include binary_sensors.yaml
 switch: !include switches.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 notify: !include notifier.yaml
 device_tracker: !include device_trackers.yaml
-input_boolean: !include input_booleans.yaml
+#input_boolean: !include input_booleans.yaml
 input_number: !include input_numbers.yaml
+input_select: !include input_selects.yaml
 media_player: !include media_players.yaml
 camera: !include cameras.yaml
 weblink: !include weblinks.yaml
+history_graph: !include history_graphs.yaml

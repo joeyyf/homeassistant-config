@@ -1,6 +1,20 @@
 ### customize ###
 
 # groups
+group.connectivity:
+  friendly_name: Erreichbarkeit
+
+group.info:
+  friendly_name: Info
+
+group.all_automations:
+  hidden: false
+  friendly_name: Alle Automatisierungen
+
+group.all_switches:
+  hidden: false
+  friendly_name: Alle Schalter
+
 group.input_networkalarm:
   friendly_name: Alarm bei Netzwerklast
 
@@ -9,6 +23,12 @@ group.input_catfountain:
 
 group.kitchen:
   friendly_name: Kueche
+
+group.livingroom:
+  friendly_name: Wohnzimmer
+
+group.office:
+  friendly_name: Buero
 
 group.trackers:
   friendly_name: Family
@@ -43,12 +63,31 @@ group.commute_his:
 group.commute_her:
   friendly_name: Pendelei Puh
 
+group.network_zerosensor01:
+  friendly_name: Pi-Sensor Wohnzimmer
+
+group.theme:
+  friendly_name: Theme
+
 # switches
 switch.kitchen_01:
   friendly_name: Katzenbrunnen
   icon: mdi:cat
 
+# sun
+sun.sun:
+  friendly_name: Sonne
+
 # sensors
+sensor.googledns_template:
+  friendly_name: Google
+  unit_of_measurement: 'ms'
+  icon: mdi:google
+
+sensor.version_current:
+  friendly_name: Aktuelle Version
+  icon: mdi:information
+
 sensor.commute_his:
   friendly_name: Arbeitsweg
 
@@ -80,7 +119,7 @@ sensor.callmonitor:
   icon: mdi:phone
 
 sensor.weather_yr_symbol:
-  friendly_name: Jetzt
+  friendly_name: Status
 
 sensor.weather_yr_future4h_symbol:
   friendly_name: In 4 Std.
@@ -108,6 +147,8 @@ sensor.weather_yr_humidity:
 sensor.weather_yr_wind_direction:
   friendly_name: Windrichtung
   icon: mdi:weather-windy-variant
+  extra_badge:
+    - entity_id: sensor.weather_yr_wind_speed
 
 sensor.weather_yr_wind_speed:
   friendly_name: Windgeschw.
@@ -166,6 +207,25 @@ sensor.piholemonitor_dns_unique_clients:
 sensor.piholemonitor_domains_blocked:
   friendly_name: Anzahl geblockter Domänen
 
+sensor.zerosensor01_sensor_template:
+  friendly_name: Status
+  icon: mdi:checkbox-marked-circle-outline
+
+sensor.office_temperature_template:
+  friendly_name: Temperatur
+  unit_of_measurement: "°C"
+  icon: mdi:oil-temperature
+
+sensor.office_humidity_template:
+  friendly_name: Luftfeuchtigkeit
+  unit_of_measurement: "%"
+  icon: mdi:water-percent
+
+#binary_sensors
+binary_sensor.floorplan:
+  custom_ui_state_card: state-card-floorplan
+  config: !include floorplan.yaml
+
 # media_players
 media_player.samsungsmarttv:
   friendly_name: Samsung Smart TV
@@ -183,15 +243,15 @@ camera.commute_highway_01:
 camera.commute_highway_02:
   friendly_name: !secret commute_highway_02
 
-# input_booleans
-input_boolean.catfountain_automatic:
-  icon: mdi:light-switch
+camera.commute_highway_03:
+  friendly_name: !secret commute_highway_03
 
-input_boolean.catfountain_notify:
-  icon: mdi:message-bulleted
+camera.commute_highway_04:
+  friendly_name: !secret commute_highway_04
 
-input_boolean.netmonitor_downrate_current_alarm_max_notify:
-  icon: mdi:message-bulleted
+# history_graphs
+history_graph.temperature_graph:
+  friendly_name: Temperaturen (24h)
 
 # input_numbers
 input_number.netmonitor_downrate_current_alarm_max:
