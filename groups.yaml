@@ -50,6 +50,7 @@ input_view:
     - group.info
     - group.theme
     - group.input_networkalarm
+    - group.input_telephone
     - group.all_automations
     - group.all_switches
 
@@ -171,6 +172,10 @@ commute_her:
 input_networkalarm:
   entities:
     - input_number.netmonitor_downrate_current_alarm_max
+
+input_telephone:
+  entities:
+    - input_text.text_last_call
 
 trackers:
   entities:

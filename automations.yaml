@@ -85,3 +85,29 @@
       data:
         entity_id: input_select.hass_template
         option: 'default'
+
+- alias: Telefon - Einkommender Anruf Protokoll
+  id: telephone_incoming_call
+  trigger:
+    - platform: state
+      entity_id: sensor.callmonitor
+      from: 'idle'
+      to: 'ringing'
+  action:
+    - service: variable.set_variable
+      data:
+        variable: input_text.text_last_call
+        value_template: '{{ states.sensor.callmonitor.attributes.from }}'
+
+- alias: Telefon - Verpasster Anruf
+  id: telephone_missed_call
+  trigger:
+    - platform: state
+      entity_id: sensor.callmonitor
+      from: 'ringing'
+      to: 'idle'
+  action:
+    - service: notify.mailnotifier
+      data:
+        title: "Verpasster Anruf"
+        message: 'Von: {{ states.input_text.text_last_call.state }} um {{ now().strftime("%H:%M:%S") }}'

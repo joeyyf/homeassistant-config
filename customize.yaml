@@ -69,6 +69,9 @@ group.network_zerosensor01:
 group.theme:
   friendly_name: Theme
 
+group.input_telephone:
+  friendly_name: Telefon
+
 # switches
 switch.kitchen_01:
   friendly_name: Katzenbrunnen
