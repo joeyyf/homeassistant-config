@@ -1,0 +1,30 @@
+name: My Awesome Home
+views:
+  - name: Example
+    theme: dark
+    cards:
+      - type: entities
+        title: Example
+        entities:
+          - sensor.netmonitor
+          - sensor.callmonitor
+          - sensor.netmonitor_downrate_sensor_template
+          - sensor.netmonitor_uprate_sensor_template
+          - sensor.netmonitor_downrate_current_sensor_template
+          
+  - tab_icon: mdi:home-assistant
+    name: Second view
+    cards:
+      - type: entities
+        title: Lots of Kitchen AC
+        entities:
+          - sensor.weather_yr_symbol
+          - sun.sun
+          - sensor.weather_yr_temperature
+          - sensor.weather_yr_cloudiness
+          - sensor.weather_yr_humidity
+          - sensor.weather_yr_wind_direction
+          - sensor.weather_yr_wind_speed
+          - sensor.weather_yr_fog
+          - sensor.weather_yr_precipitation
+          - sensor.weather_yr_pressure
