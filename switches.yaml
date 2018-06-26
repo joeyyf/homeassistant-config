@@ -1,3 +1,7 @@
 - platform: tplink
   name: kitchen_01
-  host: 192.168.178.248
+  host: !secret ip_kitchen_01
+
+- platform: wake_on_lan
+  name: wol_hispc
+  mac_address: !secret mac_hispc

@@ -1,0 +1,10 @@
+alias: Katzenbrunnen - Stündlich automatisch an/aus
+initial_state: True
+trigger:
+  - platform: time
+    # matches every hour whole
+    minutes: 0
+    seconds: 00
+action:
+  - service: switch.toggle
+    entity_id: switch.kitchen_01

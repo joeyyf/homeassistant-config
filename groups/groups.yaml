@@ -1,60 +1,4 @@
 ### groups ###
-# views
-default_view:
-  view: yes
-  name: Home
-  icon: mdi:home
-  entities:
-    - group.livingroom
-    - group.office
-    - group.kitchen
-    - group.trackers
-
-weather_view:
-  view: yes
-  name: Wetter
-  icon: mdi:weather-partlycloudy
-  entities:
-    - group.weather_graphs
-    - group.weather
-    - group.weather_forecast_4h
-    - group.weather_forecast_24h
-    - group.weather_stillimage
-
-network_view:
-  view: yes
-  name: Netzwerk
-  icon: mdi:network
-  entities:
-    - group.network_links
-    - group.connectivity
-    - group.network_fritzbox
-    - group.network_webhost
-    - group.network_hass
-    - group.network_zerosensor01
-    - group.network_nas
-
-commute_view:
-  view: yes
-  name: Arbeitsweg
-  icon: mdi:train
-  entities:
-    #- group.commute_his
-    - group.commute_her
-
-input_view:
-  view: yes
-  name: Input
-  icon: mdi:toggle-switch-off
-  entities:
-    - group.info
-    - group.theme
-    - group.input_networkalarm
-    - group.input_telephone
-    - group.all_automations
-    - group.all_switches
-
-# groups
 weather:
   entities:
     - sensor.weather_yr_symbol
@@ -71,16 +15,6 @@ weather:
 weather_graphs:
   entities:
     - history_graph.temperature_graph
-
-weather_forecast_4h:
-  entities:
-    - sensor.weather_yr_future4h_symbol
-    - sensor.weather_yr_future4h_temperature
-
-weather_forecast_24h:
-  entities:
-    - sensor.weather_yr_future24h_symbol
-    - sensor.weather_yr_future24h_temperature
 
 weather_stillimage:
   entities:
@@ -152,6 +86,8 @@ office:
   entities:
     - sensor.office_temperature_template
     - sensor.office_humidity_template
+    - sensor.hispc_sensor_template
+    - switch.wol_hispc
 
 info:
   entities:

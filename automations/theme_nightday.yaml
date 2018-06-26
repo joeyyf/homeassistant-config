@@ -1,0 +1,12 @@
+alias: Theme - Nacht-Tag
+id: night_to_day_theme
+trigger:
+  - platform: state
+    entity_id: sun.sun
+    from: 'below_horizon'
+    to: 'above_horizon'
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.hass_template
+      option: 'default'

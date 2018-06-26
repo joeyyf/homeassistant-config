@@ -1,0 +1,11 @@
+alias: Theme - Aendern
+id: switch_hass_template
+trigger:
+  - platform: state
+    entity_id: input_select.hass_template
+  - platform: homeassistant
+    event: start
+action:
+  - service: frontend.set_theme
+    data_template:
+      name: "{{ states.input_select.hass_template.state }}"

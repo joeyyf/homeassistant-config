@@ -1,0 +1,8 @@
+- platform: pi_hole
+  name: piholemonitor
+  host: !secret pihole_ip
+  monitored_conditions:
+    - ads_blocked_today
+    - ads_percentage_today
+    - unique_clients
+    - domains_being_blocked

@@ -1,0 +1,12 @@
+alias: Telefon - Einkommender Anruf Protokoll
+id: telephone_incoming_call
+trigger:
+  - platform: state
+    entity_id: sensor.callmonitor
+    from: 'idle'
+    to: 'ringing'
+action:
+  - service: variable.set_variable
+    data:
+      variable: input_text.text_last_call
+      value_template: '{{ states.sensor.callmonitor.attributes.from }}'

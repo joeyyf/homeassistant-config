@@ -1,0 +1,9 @@
+default_view:
+  view: yes
+  name: Home
+  icon: mdi:home
+  entities:
+    - group.livingroom
+    - group.office
+    - group.kitchen
+    - group.trackers

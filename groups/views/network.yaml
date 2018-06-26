@@ -1,0 +1,12 @@
+network_view:
+  view: yes
+  name: Netzwerk
+  icon: mdi:network
+  entities:
+    - group.network_links
+    - group.connectivity
+    - group.network_fritzbox
+    - group.network_webhost
+    - group.network_hass
+    - group.network_zerosensor01
+    - group.network_nas

@@ -1,0 +1,8 @@
+weather_view:
+  view: yes
+  name: Wetter
+  icon: mdi:weather-partlycloudy
+  entities:
+    - group.weather_graphs
+    - group.weather
+    - group.weather_stillimage

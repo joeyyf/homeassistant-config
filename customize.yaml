@@ -1,5 +1,16 @@
 ### customize ###
 
+# views
+group.default_view:
+  order: 1
+group.weather_view:
+  order: 2
+group.network_view:
+  order: 3
+group.commute_view:
+  order: 4
+group.input_view:
+  order: 5
 # groups
 group.connectivity:
   friendly_name: Erreichbarkeit
@@ -22,16 +33,16 @@ group.input_catfountain:
   friendly_name: Katzenbrunnen
 
 group.kitchen:
-  friendly_name: Kueche
+  friendly_name: Küche
 
 group.livingroom:
   friendly_name: Wohnzimmer
 
 group.office:
-  friendly_name: Buero
+  friendly_name: Büro
 
 group.trackers:
-  friendly_name: Family
+  friendly_name: Anwesenheit
 
 group.weather:
   friendly_name: Wetter
@@ -77,11 +88,19 @@ switch.kitchen_01:
   friendly_name: Katzenbrunnen
   icon: mdi:cat
 
+switch.wol_hispc:
+  friendly_name: Joey PC (WOL)
+  icon: mdi:auto-fix
+
 # sun
 sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.hispc_sensor_template:
+  friendly_name: Joey PC
+  icon: mdi:desktop-classic
+
 sensor.googledns_template:
   friendly_name: Google
   unit_of_measurement: 'ms'
@@ -137,7 +156,7 @@ sensor.weather_yr_future24h_temperature:
   friendly_name: Temperatur
 
 sensor.weather_yr_temperature:
-  friendly_name: Temperatur
+  friendly_name: Temp. (Außen)
 
 sensor.weather_yr_cloudiness:
   friendly_name: Wolkig
@@ -167,6 +186,7 @@ sensor.weather_yr_precipitation:
 
 sensor.weather_yr_pressure:
   friendly_name: Luftdruck
+  icon: mdi:weight
 
 sensor.cpu_load_total:
   friendly_name: CPU
@@ -215,9 +235,9 @@ sensor.zerosensor01_sensor_template:
   icon: mdi:checkbox-marked-circle-outline
 
 sensor.office_temperature_template:
-  friendly_name: Temperatur
+  friendly_name: Temp. (Büro)
   unit_of_measurement: "°C"
-  icon: mdi:oil-temperature
+  icon: mdi:thermometer
 
 sensor.office_humidity_template:
   friendly_name: Luftfeuchtigkeit

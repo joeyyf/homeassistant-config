@@ -1,0 +1,12 @@
+alias: Katzenbrunnen - Anzeige
+initial_state: False
+trigger:
+  - platform: state
+    entity_id: switch.kitchen_01
+action:
+  - service: persistent_notification.create
+    data_template:
+      title: "Notification: Status Katzenbrunnen"
+      message: >
+        'Katzenbrunnen ist jetzt {% if is_state('switch.kitchen_01', 'on') %}an{% else %}aus{% endif %} ({{now().strftime("%H:%M:%S")}})'
+      notification_id: 'catfountain'

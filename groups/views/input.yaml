@@ -1,0 +1,11 @@
+input_view:
+  view: yes
+  name: Input
+  icon: mdi:toggle-switch-off
+  entities:
+    - group.info
+    - group.theme
+    - group.input_networkalarm
+    - group.input_telephone
+    - group.all_automations
+    - group.all_switches

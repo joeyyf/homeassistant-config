@@ -1,0 +1,7 @@
+commute_view:
+  view: yes
+  name: Arbeitsweg
+  icon: mdi:train
+  entities:
+    #- group.commute_his
+    - group.commute_her

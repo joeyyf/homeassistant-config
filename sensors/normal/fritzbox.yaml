@@ -1,0 +1,9 @@
+- platform: fritzbox_netmonitor
+  name: netmonitor
+
+- platform: fritzbox_callmonitor
+  name: callmonitor
+  prefixes:
+    - '+49'
+    - '+4989'
+    - '089'
