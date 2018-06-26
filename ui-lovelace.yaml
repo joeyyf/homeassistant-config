@@ -1,25 +1,23 @@
-name: My Awesome Home
+name: Home
 views:
-  - name: Example
+  - name: Test
+    tab_icon: mdi:home-assistant
     theme: dark
     cards:
       - type: entities
-        title: Example
+        title: Entitites
         entities:
           - sensor.netmonitor
           - sensor.callmonitor
           - sensor.netmonitor_downrate_sensor_template
           - sensor.netmonitor_uprate_sensor_template
           - sensor.netmonitor_downrate_current_sensor_template
-          
-  - tab_icon: mdi:home-assistant
-    name: Second view
-    cards:
-      - type: entities
-        title: Lots of Kitchen AC
+
+      - type: glance
+        title: Glance
         entities:
           - sensor.weather_yr_symbol
-          - sun.sun
+          #- sun.sun
           - sensor.weather_yr_temperature
           - sensor.weather_yr_cloudiness
           - sensor.weather_yr_humidity
@@ -28,3 +26,22 @@ views:
           - sensor.weather_yr_fog
           - sensor.weather_yr_precipitation
           - sensor.weather_yr_pressure
+
+      - type: picture-glance
+        image: https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=240&w=495
+        title: Picture Glance
+        entities:
+          - sensor.callmonitor
+          - switch.kitchen_01
+
+      - type: weather-forecast
+        title: Weather Forecast
+        entity: weather.ipma
+
+      - type: media-control
+        title: Media Control
+        entity: media_player.samsungsmarttv
+
+      - type: iframe
+        url: http://webhost/admin/
+        aspect_ratio: 100%

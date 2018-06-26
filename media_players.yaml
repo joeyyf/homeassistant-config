@@ -1,5 +1,5 @@
 - platform: samsungtv
   name: samsungsmarttv
-  host: 192.168.178.227
-  mac: 24:4B:03:E6:F9:E6
+  host: !secret samsungtv_ip
+  mac: !secret samsungtv_mac
   port: 8001
