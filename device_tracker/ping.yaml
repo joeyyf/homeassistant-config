@@ -1,0 +1,4 @@
+- platform: ping
+  hosts:
+    webhost: !secret webhost_ip
+    zerosensor01: !secret zerosensor01_ip
