@@ -1,12 +1,4 @@
 - platform: generic
-  name: weather_stillimage_00
-  still_image_url: !secret weather_url_00
-
-- platform: generic
-  name: weather_stillimage_01
-  still_image_url: !secret weather_url_01
-
-- platform: generic
   name: commute_highway_01
   still_image_url: !secret commute_highway_01_url
 

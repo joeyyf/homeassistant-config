@@ -1,0 +1,3 @@
+- platform: tplink
+  name: kitchen_01
+  host: !secret ip_kitchen_01
