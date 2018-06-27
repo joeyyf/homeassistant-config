@@ -1,7 +1,171 @@
 name: Home
 views:
-  - name: Test
+  - name: Home
     tab_icon: mdi:home-assistant
+    cards:
+      - type: entities
+        title: Anwesenheit
+        entities:
+          - device_tracker.his_s8
+          - device_tracker.her_iphone
+
+      - type: entities
+        title: Büro
+        entities:
+          - sensor.office_temperature_template
+          - sensor.office_humidity_template
+          - sensor.hispc_sensor_template
+          - switch.wol_hispc
+
+      - type: entities
+        title: Küche
+        entities:
+          - switch.kitchen_01
+
+      - type: media-control
+        title: Samsung Smart TV
+        entity: media_player.samsungsmarttv
+
+  - name: Wetter
+    tab_icon: mdi:weather-partlycloudy
+    cards:
+      - type: weather-forecast
+        title: Wetter IPMA
+        entity: weather.ipma
+
+      - type: history-graph
+        title: Temperaturen (24h)
+        entity: history_graph.temperature_graph
+
+      - type: entities
+        title: Wetter YR
+        entities:
+          - sensor.weather_yr_symbol
+          - sun.sun
+          - sensor.weather_yr_temperature
+          - sensor.weather_yr_cloudiness
+          - sensor.weather_yr_humidity
+          - sensor.weather_yr_wind_direction
+          - sensor.weather_yr_wind_speed
+          - sensor.weather_yr_fog
+          - sensor.weather_yr_precipitation
+          - sensor.weather_yr_pressure
+
+      - type: camera-preview
+        title: Regenkarte Deutschland
+        entity: camera.weather_stillimage_00
+
+      - type: camera-preview
+        title: Satellit Europa
+        entity: camera.weather_stillimage_01
+
+  - name: Netzwerk
+    tab_icon: mdi:network
+    cards:
+      - type: entities
+        title: Links
+        entities:
+          - weblink.router
+          - weblink.nas
+          - weblink.pihole
+
+      - type: entities
+        title: Pings
+        entities:
+          - sensor.googledns_template
+
+      - type: entities
+        title: FritzBox
+        entities:
+          - sensor.netmonitor
+          - sensor.callmonitor
+          - sensor.netmonitor_downrate_sensor_template
+          - sensor.netmonitor_uprate_sensor_template
+          - sensor.netmonitor_downrate_current_sensor_template
+
+      - type: entitites
+        title: Webhost / PiHole
+        entities:
+          #- device_tracker.webhost
+          - sensor.webhost_sensor_template
+          - sensor.piholemonitor_ads_blocked_today
+          - sensor.piholemonitor_ads_percentage_blocked_today
+          - sensor.piholemonitor_dns_unique_clients
+          - sensor.piholemonitor_domains_blocked
+
+      - type: entities
+        title: Home Assistant
+        entities:
+          - sensor.memory_use_percent
+          - sensor.processor_use
+          - sensor.network_in
+          - sensor.network_out
+          - sensor.last_boot
+          - sensor.since_last_boot
+
+      - type: entities
+        title: Pi Zero Sensor 01
+        entities:
+          - sensor.zerosensor01_sensor_template
+
+      - type: entities
+        title: Synology NAS
+        entities:
+          - sensor.cpu_load_total
+          - sensor.memory_usage_real
+          - sensor.network_up
+          - sensor.network_down
+          - sensor.name_sda
+          - sensor.status_sda
+          - sensor.temperature_sda
+          - sensor.name_sdb
+          - sensor.status_sdb
+          - sensor.temperature_sdb
+
+  - name: Pendelei
+    tab_icon: mdi:car
+    cards:
+      - type: camera-preview
+        title: TODO 03
+        entity: camera.commute_highway_03
+
+      - type: camera-preview
+        title: TODO 04
+        entity: camera.commute_highway_04
+
+      - type: camera-preview
+        title: TODO 01
+        entity: camera.commute_highway_01
+
+      - type: camera-preview
+        title: TODO 02
+        entity: camera.commute_highway_02
+
+  - name: Input
+    tab_icon: mdi:toggle-switch
+    cards:
+      - type: entities
+        title: Info
+        entities:
+          - sensor.version_current
+
+      - type: entities
+        title: Theme
+        entities:
+          - input_select.hass_template
+
+      - type: entitites
+        title: Netzwerk Alarm
+        entities:
+          - input_number.netmonitor_downrate_current_alarm_max
+
+      - type: entitites
+        title: Telefon
+        entities:
+          - input_text.text_last_call
+
+  - name: Test
+    tab_icon: mdi:test-tube
     theme: dark
     cards:
       - type: entities
