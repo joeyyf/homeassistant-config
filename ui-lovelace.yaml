@@ -83,7 +83,7 @@ views:
           - sensor.netmonitor_uprate_sensor_template
           - sensor.netmonitor_downrate_current_sensor_template
 
-      - type: entitites
+      - type: entities
         title: Webhost / PiHole
         entities:
           #- device_tracker.webhost
@@ -154,12 +154,12 @@ views:
         entities:
           - input_select.hass_template
 
-      - type: entitites
+      - type: entities
         title: Netzwerk Alarm
         entities:
           - input_number.netmonitor_downrate_current_alarm_max
 
-      - type: entitites
+      - type: entities
         title: Telefon
         entities:
           - input_text.text_last_call
@@ -169,7 +169,7 @@ views:
     theme: dark
     cards:
       - type: entities
-        title: Entitites
+        title: Entities
         entities:
           - sensor.netmonitor
           - sensor.callmonitor

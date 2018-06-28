@@ -11,7 +11,11 @@ group.commute_view:
   order: 4
 group.input_view:
   order: 5
+
 # groups
+group.gasprices:
+  friendly_name: Tankstellen
+
 group.connectivity:
   friendly_name: Erreichbarkeit
 
@@ -97,6 +101,22 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.gasprices_name_01_template:
+  friendly_name: Name
+  icon: mdi:gas-station
+
+sensor.gasprices_price_01_template:
+  friendly_name: Preis
+  icon: mdi:currency-usd
+
+sensor.gasprices_name_02_template:
+  friendly_name: Name
+  icon: mdi:gas-station
+
+sensor.gasprices_price_02_template:
+  friendly_name: Preis
+  icon: mdi:currency-usd
+
 sensor.hispc_sensor_template:
   friendly_name: Joey PC
   icon: mdi:desktop-classic

@@ -1,7 +1,8 @@
 commute_view:
   view: yes
   name: Arbeitsweg
-  icon: mdi:train
+  icon: mdi:car
   entities:
+    - group.gasprices
     #- group.commute_his
     - group.commute_her

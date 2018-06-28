@@ -2,4 +2,4 @@
   sidebar_title: Gebaeudeplan
   sidebar_icon: mdi:floor-plan
   url_path: floorplan
-  config: !include customization/floorplan.yaml
+  config: !include floorplan.yaml

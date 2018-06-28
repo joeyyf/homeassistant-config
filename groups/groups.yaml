@@ -118,6 +118,13 @@ trackers:
     - device_tracker.his_s8
     - device_tracker.her_iphone
 
+gasprices:
+  entities:
+    - sensor.gasprices_name_01_template
+    - sensor.gasprices_price_01_template
+    - sensor.gasprices_name_02_template
+    - sensor.gasprices_price_02_template
+
 theme:
   entities:
     - input_select.hass_template

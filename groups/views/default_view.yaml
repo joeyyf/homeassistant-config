@@ -3,7 +3,7 @@ default_view:
   name: Home
   icon: mdi:home
   entities:
-    - group.livingroom
+    - group.trackers
     - group.office
     - group.kitchen
-    - group.trackers
+    - group.livingroom

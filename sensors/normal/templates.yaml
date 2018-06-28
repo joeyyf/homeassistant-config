@@ -29,3 +29,21 @@
     netmonitor_downrate_current_sensor_template:
       unit_of_measurement: 'Mbit/s'
       value_template: "{{ (states.sensor.netmonitor.attributes.transmission_rate_down * 8 / 1000 / 1000 | float) | round(1) }}"
+
+    gasprices_price_01_template:
+      value_template: '{{ states.sensor.gasprices.attributes.stations[0]["e5"] }}'
+      unit_of_measurement: '€'
+      entity_id: sensor.gasprices
+
+    gasprices_name_01_template:
+      value_template: '{{ states.sensor.gasprices.attributes.stations[0]["name"].title() }}'
+      entity_id: sensor.gasprices
+
+    gasprices_price_02_template:
+      value_template: '{{ states.sensor.gasprices.attributes.stations[1]["e5"] }}'
+      unit_of_measurement: '€'
+      entity_id: sensor.gasprices
+
+    gasprices_name_02_template:
+      value_template: '{{ states.sensor.gasprices.attributes.stations[1]["name"].title() }}'
+      entity_id: sensor.gasprices
