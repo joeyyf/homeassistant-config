@@ -1,0 +1,16 @@
+- platform: rest
+  name: gasprices
+  resource: !secret gasprices_url
+  # only scan every 5 minutes
+  scan_interval: 300
+  value_template: '{{ value_json.value }}'
+  json_attributes:
+    - stations
+  headers:
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+      Accept-Encoding: "gzip, deflate, br"
+      Accept-Language: "en-GB,en;q=0.5"
+      Connection: "keep-alive"
+      Host: "creativecommons.tankerkoenig.de"
+      Upgrade-Insecure-Requests: 1
+      User-Agent: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0"
