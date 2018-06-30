@@ -92,7 +92,7 @@ office:
 info:
   entities:
     - sensor.version_current
-
+    - sensor.version_available
 
 #commute_his:
 #  entities:

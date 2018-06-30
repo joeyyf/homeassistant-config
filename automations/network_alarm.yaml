@@ -6,13 +6,8 @@ trigger:
     minutes: '/5'
     seconds: 00
 condition:
-  condition: and
-  conditions:
-    - condition: state
-      entity_id: input_boolean.netmonitor_downrate_current_alarm_max_notify
-      state: 'on'
-    - condition: template
-      value_template: '{{ (states.sensor.netmonitor_downrate_current_sensor_template.state | float) > (states.input_number.netmonitor_downrate_current_alarm_max.state | float) }}'
+  - condition: template
+    value_template: '{{ (states.sensor.netmonitor_downrate_current_sensor_template.state | float) > (states.input_number.netmonitor_downrate_current_alarm_max.state | float) }}'
 action:
   - service: persistent_notification.create
     data_template:

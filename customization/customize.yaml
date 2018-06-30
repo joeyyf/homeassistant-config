@@ -101,6 +101,10 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.version_available:
+  friendly_name: Neueste Version (GIT)
+  icon: mdi:github-circle
+
 sensor.gasprices_name_01_template:
   friendly_name: Name
   icon: mdi:gas-station

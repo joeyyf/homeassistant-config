@@ -1,0 +1,4 @@
+speak_catfountain_on:
+  alias: TTS Katzenbrunnen an
+  sequence:
+  - service: shell_command.tts_catfountain_on

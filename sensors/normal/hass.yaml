@@ -10,3 +10,7 @@
 
 - platform: version
   name: version_current
+
+- platform: command_line
+  name: version_available
+  command: python3 -c "import requests; print(requests.get('https://pypi.python.org/pypi/homeassistant/json').json()['info']['version'])"
