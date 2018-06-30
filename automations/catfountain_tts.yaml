@@ -1,0 +1,24 @@
+alias: Katzenbrunnen - TTS
+initial_state: False
+trigger:
+  - platform: state
+    entity_id: switch.kitchen_01
+    to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: 'device_tracker.his_s8'
+        state: 'home'
+      - condition: state
+        entity_id: 'device_tracker.her_iphone'
+        state: 'home'
+        
+    - condition: time
+      after: '06:30:00'
+      before: '22:30:00'
+action:
+  - service: script.turn_on
+    entity_id: script.speak_catfountain_on
