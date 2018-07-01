@@ -303,3 +303,9 @@ history_graph.temperature_graph:
 # input_numbers
 input_number.netmonitor_downrate_current_alarm_max:
   icon: mdi:chart-line-variant
+
+# input booleans
+input_boolean.weather_customcardhack:
+  config:
+    weather: weather.yweather
+    sun: sun.sun

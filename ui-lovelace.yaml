@@ -29,9 +29,8 @@ views:
   - name: Wetter
     tab_icon: mdi:weather-partlycloudy
     cards:
-      - type: weather-forecast
-        title: Wetter IPMA
-        entity: weather.ipma
+      - type: 'custom:custom-weather-animated'
+        entity: input_boolean.weather_customcardhack
 
       - type: history-graph
         title: Temperaturen (24h)
@@ -166,7 +165,6 @@ views:
 
   - name: Test
     tab_icon: mdi:test-tube
-    theme: dark
     cards:
       - type: entities
         title: Entities
