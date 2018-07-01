@@ -147,6 +147,7 @@ views:
         title: Info
         entities:
           - sensor.version_current
+          - sensor.version_available
 
       - type: entities
         title: Theme
@@ -163,9 +164,29 @@ views:
         entities:
           - input_text.text_last_call
 
+      - type: entities
+        title: Alle Schalter
+        entities:
+          - group.all_switches
+
+      - type: entities
+        title: Alle Automationen
+        entities:
+          - group.all_automations
+
   - name: Test
     tab_icon: mdi:test-tube
     cards:
+      - type: entities
+        title: Alle Schalter
+        entities:
+          - group.all_switches
+
+      - type: entities
+        title: Alle Automationen
+        entities:
+          - group.all_automations
+
       - type: entities
         title: Entities
         entities:
