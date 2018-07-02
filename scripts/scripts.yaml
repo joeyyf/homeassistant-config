@@ -3,9 +3,7 @@ speak_catfountain_on:
   sequence:
   - service: shell_command.tts_catfountain_on
 
-telephone_set_incoming:
-  alias: Setze einkommenden Anrufer
+speak_incoming_call:
+  alias: TTS Eingehender Anruf
   sequence:
-  - service: shell_command.telephone_set_incoming
-    data_template:
-      caller: '{{ states.sensor.callmonitor.attributes.from }}'
+  - service: shell_command.tts_incoming_call

@@ -9,4 +9,4 @@ action:
   - service: notify.mailnotifier
     data:
       title: "Verpasster Anruf"
-      message: 'Von: {{ states.input_text.text_last_call.state }} um {{ now().strftime("%H:%M:%S") }}'
+      message: 'Von: {{ states.variable.last_caller.state }} um {{ now().strftime("%H:%M:%S") }}'

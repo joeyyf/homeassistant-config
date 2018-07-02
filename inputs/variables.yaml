@@ -1,0 +1,5 @@
+last_caller:
+  value: 'Unbekannt'
+  attributes:
+    friendly_name: 'Letzter Anrufer'
+    icon: mdi:phone-incoming

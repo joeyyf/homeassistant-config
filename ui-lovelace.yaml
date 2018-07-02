@@ -162,7 +162,7 @@ views:
       - type: entities
         title: Telefon
         entities:
-          - input_text.text_last_call
+          - variable.last_caller
 
       - type: entities
         title: Alle Schalter
