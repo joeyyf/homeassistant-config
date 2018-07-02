@@ -1,1 +1,3 @@
 tts_catfountain_on: !secret alexa_script_path_01
+#telephone_set_incoming: !secret curl_telephone_set_incoming
+telephone_set_incoming: 'echo telephone_set_incoming caller: "{{ caller }}" >> /tmp/caller.log'
