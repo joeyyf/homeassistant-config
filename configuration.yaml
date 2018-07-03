@@ -73,7 +73,6 @@ media_player: !include_dir_merge_list media_players/
 camera: !include_dir_merge_list cameras/
 weblink: !include weblinks.yaml
 history_graph: !include graphs/temperature.yaml
-#history_graph: !include_dir_merge_list graphs/
 weather: !include_dir_merge_list weather/
 shell_command: !include scripts/shell/shellcommands.yaml
 variable: !include inputs/variables.yaml

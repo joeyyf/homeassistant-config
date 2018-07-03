@@ -9,6 +9,6 @@ action:
   - service: variable.set_variable
     data:
       variable: last_caller
-      value_template: '{{ states.sensor.callmonitor.attributes.from }}'
+      value_template: '{{ states.sensor.callmonitor.attributes.from_name }}'
   - service: script.turn_on
     entity_id: script.speak_incoming_call

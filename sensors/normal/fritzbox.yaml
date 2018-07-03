@@ -3,6 +3,9 @@
 
 - platform: fritzbox_callmonitor
   name: callmonitor
+  username: !secret fritzbox_user
+  password: !secret fritzbox_password
+  phonebook: 0
   prefixes:
     - '+49'
     - '+4989'
