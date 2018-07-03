@@ -140,8 +140,8 @@ views:
         title: TODO 02
         entity: camera.commute_highway_02
 
-  - name: Input
-    tab_icon: mdi:toggle-switch
+  - name: Settings
+    tab_icon: mdi:tune
     cards:
       - type: entities
         title: Info
@@ -153,26 +153,29 @@ views:
         title: Theme
         entities:
           - input_select.hass_template
+          - automation.theme__aendern
+          - automation.theme__nachttag
+          - automation.theme__tagnacht
 
       - type: entities
         title: Netzwerk Alarm
         entities:
           - input_number.netmonitor_downrate_current_alarm_max
+          - automation.netzwerk__alarm
 
       - type: entities
         title: Telefon
         entities:
           - variable.last_caller
+          - automation.telefon__verpasster_anruf
+          - automation.telefon__einkommender_anruf_protokoll
 
       - type: entities
-        title: Alle Schalter
+        title: Katzen
         entities:
-          - group.all_switches
-
-      - type: entities
-        title: Alle Automationen
-        entities:
-          - group.all_automations
+          - automation.katzenbrunnen__anzeige
+          - automation.katzenbrunnen__stundlich_automatisch_anaus
+          - automation.katzenbrunnen__tts
 
   - name: Test
     tab_icon: mdi:test-tube
