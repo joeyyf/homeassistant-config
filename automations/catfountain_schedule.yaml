@@ -1,5 +1,4 @@
 alias: Katzenbrunnen - Stündlich automatisch an/aus
-initial_state: True
 trigger:
   - platform: time
     # matches every hour whole

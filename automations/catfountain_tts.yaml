@@ -1,5 +1,4 @@
 alias: Katzenbrunnen - TTS
-initial_state: False
 trigger:
   - platform: state
     entity_id: switch.kitchen_01
@@ -15,7 +14,7 @@ condition:
       - condition: state
         entity_id: 'device_tracker.her_iphone'
         state: 'home'
-        
+
     - condition: time
       after: '06:30:00'
       before: '22:30:00'

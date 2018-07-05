@@ -1,5 +1,4 @@
 alias: Katzenbrunnen - Anzeige
-initial_state: False
 trigger:
   - platform: state
     entity_id: switch.kitchen_01

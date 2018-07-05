@@ -1,5 +1,4 @@
 alias: Netzwerk - Alarm
-initial_state: True
 trigger:
   #check every 5 minutes
   - platform: time
