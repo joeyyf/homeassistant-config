@@ -7,3 +7,11 @@ speak_incoming_call:
   alias: TTS Eingehender Anruf
   sequence:
   - service: shell_command.tts_incoming_call
+
+backup:
+  alias: Backup home assistant config directory
+  sequence:
+  - service: shell_command.backup_hass_config
+
+gasstation:
+  sequence:

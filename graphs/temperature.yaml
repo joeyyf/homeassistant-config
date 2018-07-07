@@ -1,3 +1,4 @@
+#OBSOLETE as of 0.73.0 --- delete?
 temperature_graph:
   entities:
     - sensor.weather_yr_temperature

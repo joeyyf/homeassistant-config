@@ -1,7 +1,8 @@
 name: Home
 views:
-  - name: Home
-    tab_icon: mdi:home-assistant
+  - title: Home
+    id: home
+    icon: mdi:home-assistant
     cards:
       - type: entities
         title: Anwesenheit
@@ -26,17 +27,20 @@ views:
         title: Samsung Smart TV
         entity: media_player.samsungsmarttv
 
-  - name: Wetter
-    tab_icon: mdi:weather-partlycloudy
+  - title: Wetter
+    id: weather
+    icon: mdi:weather-partlycloudy
     cards:
       - type: 'custom:custom-weather-animated'
         entity: input_boolean.weather_customcardhack
 
       - type: history-graph
         title: Temperaturen (24h)
-        entity: history_graph.temperature_graph
+        entities:
+          - sensor.weather_yr_temperature
+          - sensor.office_temperature_template
 
-      - type: entities
+      - type: glance
         title: Wetter YR
         entities:
           - sensor.weather_yr_symbol
@@ -50,16 +54,23 @@ views:
           - sensor.weather_yr_precipitation
           - sensor.weather_yr_pressure
 
-      - type: camera-preview
-        title: Regenkarte Deutschland
-        entity: camera.weather_stillimage_00
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            title: Regenkarte Deutschland
+            image:
+            camera_image: camera.weather_stillimage_00
+            entity: camera.weather_stillimage_00
 
-      - type: camera-preview
-        title: Satellit Europa
-        entity: camera.weather_stillimage_01
+          - type: picture-entity
+            title: Satellit Europa
+            image:
+            camera_image: camera.weather_stillimage_01
+            entity: camera.weather_stillimage_01
 
-  - name: Netzwerk
-    tab_icon: mdi:network
+  - title: Netzwerk
+    id: network
+    icon: mdi:network
     cards:
       - type: entities
         title: Links
@@ -121,27 +132,46 @@ views:
           - sensor.status_sdb
           - sensor.temperature_sdb
 
-  - name: Pendelei
-    tab_icon: mdi:car
+  - title: Pendelei
+    id: commute
+    icon: mdi:car
     cards:
-      - type: camera-preview
-        title: TODO 03
-        entity: camera.commute_highway_03
+      #- type: 'custom:state-card-gasstation'
+      #  entity: script.gasstation
 
-      - type: camera-preview
-        title: TODO 04
-        entity: camera.commute_highway_04
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture-entity
+                title: !secret commute_highway_03
+                image:
+                camera_image: camera.commute_highway_03
+                entity: camera.commute_highway_03
 
-      - type: camera-preview
-        title: TODO 01
-        entity: camera.commute_highway_01
+              - type: picture-entity
+                title: !secret commute_highway_04
+                image:
+                camera_image: camera.commute_highway_04
+                entity: camera.commute_highway_04
 
-      - type: camera-preview
-        title: TODO 02
-        entity: camera.commute_highway_02
+          - type: horizontal-stack
+            cards:
+              - type: picture-entity
+                title: !secret commute_highway_01
+                image:
+                camera_image: camera.commute_highway_01
+                entity: camera.commute_highway_01
 
-  - name: Settings
-    tab_icon: mdi:tune
+              - type: picture-entity
+                title: !secret commute_highway_02
+                image:
+                camera_image: camera.commute_highway_02
+                entity: camera.commute_highway_02
+
+  - title: Settings
+    id: settings
+    icon: mdi:tune
     cards:
       - type: entities
         title: Info
@@ -176,58 +206,3 @@ views:
           - automation.katzenbrunnen__anzeige
           - automation.katzenbrunnen__stundlich_automatisch_anaus
           - automation.katzenbrunnen__tts
-
-  - name: Test
-    tab_icon: mdi:test-tube
-    cards:
-      - type: entities
-        title: Alle Schalter
-        entities:
-          - group.all_switches
-
-      - type: entities
-        title: Alle Automationen
-        entities:
-          - group.all_automations
-
-      - type: entities
-        title: Entities
-        entities:
-          - sensor.netmonitor
-          - sensor.callmonitor
-          - sensor.netmonitor_downrate_sensor_template
-          - sensor.netmonitor_uprate_sensor_template
-          - sensor.netmonitor_downrate_current_sensor_template
-
-      - type: glance
-        title: Glance
-        entities:
-          - sensor.weather_yr_symbol
-          #- sun.sun
-          - sensor.weather_yr_temperature
-          - sensor.weather_yr_cloudiness
-          - sensor.weather_yr_humidity
-          - sensor.weather_yr_wind_direction
-          - sensor.weather_yr_wind_speed
-          - sensor.weather_yr_fog
-          - sensor.weather_yr_precipitation
-          - sensor.weather_yr_pressure
-
-      - type: picture-glance
-        image: https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=240&w=495
-        title: Picture Glance
-        entities:
-          - sensor.callmonitor
-          - switch.kitchen_01
-
-      - type: weather-forecast
-        title: Weather Forecast
-        entity: weather.ipma
-
-      - type: media-control
-        title: Media Control
-        entity: media_player.samsungsmarttv
-
-      - type: iframe
-        url: http://webhost/admin/
-        aspect_ratio: 100%

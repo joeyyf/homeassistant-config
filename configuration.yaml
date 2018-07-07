@@ -16,6 +16,7 @@ homeassistant:
 frontend: !include customization/frontend.yaml
 
 panel_custom: !include customization/panel_custom.yaml
+panel_iframe: !include customization/panel_iframe.yaml
 
 # Enables configuration UI
 config:
@@ -68,7 +69,7 @@ device_tracker: !include_dir_merge_list device_trackers/
 input_boolean: !include inputs/input_booleans.yaml
 input_number: !include inputs/input_numbers.yaml
 input_select: !include inputs/input_selects.yaml
-input_text: !include inputs/input_texts.yaml
+#input_text: !include inputs/input_texts.yaml
 media_player: !include_dir_merge_list media_players/
 camera: !include_dir_merge_list cameras/
 weblink: !include weblinks.yaml

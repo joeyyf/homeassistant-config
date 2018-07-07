@@ -3,5 +3,4 @@ hass_template:
   options:
    - default
    - dark
-  initial: default
   icon: mdi:theme-light-dark

@@ -3,6 +3,6 @@ commute_view:
   name: Arbeitsweg
   icon: mdi:car
   entities:
-    - group.gasprices
+    - group.gasstations
     #- group.commute_his
     - group.commute_her

@@ -1,0 +1,4 @@
+nodered:
+  title: 'Node-RED'
+  url: 'http://hassbian:1880/'
+  icon: mdi:nodejs

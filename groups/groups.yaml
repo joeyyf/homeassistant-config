@@ -1,4 +1,9 @@
 ### groups ###
+gasstations:
+  name: Tankstellen
+  entities:
+    - script.gasstation
+
 weather:
   entities:
     - sensor.weather_yr_symbol
@@ -118,12 +123,12 @@ trackers:
     - device_tracker.his_s8
     - device_tracker.her_iphone
 
-gasprices:
-  entities:
-    - sensor.gasprices_name_01_template
-    - sensor.gasprices_price_01_template
-    - sensor.gasprices_name_02_template
-    - sensor.gasprices_price_02_template
+#gasprices:
+#  entities:
+#    - sensor.gasprices_name_01_template
+#    - sensor.gasprices_price_01_template
+#    - sensor.gasprices_name_02_template
+#    - sensor.gasprices_price_02_template
 
 theme:
   entities:

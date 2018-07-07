@@ -309,3 +309,29 @@ input_boolean.weather_customcardhack:
   config:
     weather: weather.yweather
     sun: sun.sun
+
+# scripts
+script.gasstation:
+  custom_ui_state_card: state-card-gasstation
+  friendly_name: 'Tankstellen'
+  config:
+    fuel: sensor.fuel
+    e5: true
+    e10: true
+    diesel: true
+    entities:
+      - entity: '29e4d593-c5b6-49eb-a23d-53a1668a18c3'
+        street: 'Augsburger Str.'
+        brand: AGIP
+      - entity: 'd2838dea-4fb1-4e48-991d-c9ad89646e40'
+        street: 'Bavaria Petrol'
+        brand: BAVARIAPETROL
+      - entity: '40c6c30f-5150-4272-bd65-5731750edd0f'
+        street: 'Münchener Str.'
+        brand: BK
+      - entity: '15e3172e-6b83-4558-90c8-f59ea7c58142'
+        street: 'Münchener Str.'
+        brand: ALLGUTH
+      - entity: '6260e367-da89-4159-97f2-16beaaa1a682'
+        street: 'Max-von-Eyth-Str.'
+        brand: VMARKT
