@@ -62,7 +62,7 @@ sensor: !include_dir_merge_list sensors/normal/
 binary_sensor: !include sensors/binary/binary_sensors.yaml
 switch: !include_dir_merge_list switches/
 group: !include_dir_merge_named groups/
-automation: !include_dir_list automations/
+#automation: !include_dir_list automations/
 script: !include scripts/scripts.yaml
 notify: !include_dir_merge_list notifier/
 device_tracker: !include_dir_merge_list device_trackers/
