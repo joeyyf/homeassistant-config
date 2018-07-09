@@ -1,3 +1,3 @@
 tts_catfountain_on: !secret alexa_script_path_01
 tts_incoming_call: !secret alexa_script_path_02
-backup_hass_config: sudo tar --exclude='.homeassistant/home-assistant_v2.db' --exclude='.homeassistant/home-assistant.log' --exclude='.homeassistant/.git' --exclude-caches-all -czvf /media/nas_backup/hass_backup-$(date +%Y-%m-%d).tar.gz /home/homeassistant/.homeassistant/
+backup_hass_config: sudo tar --exclude='.homeassistant/home-assistant_v2.db' --exclude='.homeassistant/deps' --exclude='.homeassistant/home-assistant.log' --exclude='.homeassistant/.git' --exclude='.homeassistant/custom_components/__pycache__' --exclude='.homeassistant/www' --exclude-caches-all -czvf /media/nas_backup/hass_backup-$(date +%Y-%m-%d).tar.gz -T /home/homeassistant/files_to_backup.txt

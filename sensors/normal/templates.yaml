@@ -1,5 +1,8 @@
 - platform: template
   sensors:
+    incomingcaller_template:
+      value_template: "{{ states.sensor.callmonitor.attributes.from_name }}"
+
     googledns_template:
       value_template: '{% if is_state("binary_sensor.googledns", "on") %} {{ states.binary_sensor.googledns.attributes.round_trip_time_avg }} {% else %}Offline{% endif %}'
 

@@ -197,6 +197,7 @@ views:
         title: Telefon
         entities:
           - variable.last_caller
+          - sensor.incomingcaller_template
           - automation.telefon__verpasster_anruf
           - automation.telefon__einkommender_anruf_protokoll
 
