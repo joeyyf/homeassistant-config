@@ -140,11 +140,18 @@ views:
       #  entity: script.gasstation
 
       - type: entities
+        title: Pendelei Joey
+        entities:
+          - sensor.commute_departure_his_template
+          - script.set_commute_time_his_shell
+
+      - type: entities
         title: Pendelei Puh
         entities:
           - sensor.commute_time_her_template
           - sensor.commute_distance_her_template
           - sensor.commute_timestamp_her_template
+          - script.set_commute_time_her
 
       - type: vertical-stack
         cards:

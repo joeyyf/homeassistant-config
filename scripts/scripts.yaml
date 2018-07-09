@@ -14,9 +14,14 @@ backup:
   - service: shell_command.backup_hass_config
 
 set_commute_time_her:
-  alias: Pendel-Infos Puh
+  alias: Pendel-Infos aktualisieren
   sequence:
   - service: shell_command.set_commute_time_her_shell
+
+set_commute_time_his_shell:
+  alias: Pendel-Infos aktualisieren
+  sequence:
+  - service: shell_command.set_commute_time_his_shell
 
 gasstation:
   sequence:
