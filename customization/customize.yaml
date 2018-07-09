@@ -101,6 +101,20 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.commute_timestamp_her_template:
+  friendly_name: Aktualisiert am
+  icon: mdi:calender-clock
+
+sensor.commute_distance_her_template:
+  friendly_name: Strecke
+  icon: mdi:map-marker-distance
+  unit_of_measurement: km
+
+sensor.commute_time_her_template:
+  friendly_name: Zeit
+  icon: mdi:timer
+  unit_of_measurement: Min.
+
 sensor.incomingcaller_template:
   friendly_name: Anrufer
   icon: mdi:phone-incoming

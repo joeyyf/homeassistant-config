@@ -139,6 +139,13 @@ views:
       #- type: 'custom:state-card-gasstation'
       #  entity: script.gasstation
 
+      - type: entities
+        title: Pendelei Puh
+        entities:
+          - sensor.commute_time_her_template
+          - sensor.commute_distance_her_template
+          - sensor.commute_timestamp_her_template
+
       - type: vertical-stack
         cards:
           - type: horizontal-stack

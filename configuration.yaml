@@ -54,7 +54,7 @@ sun:
 
 #logging
 logger:
-#  default: critical
+  default: warn
 #  logs:
 #    homeassistant.components.automation: debug
 

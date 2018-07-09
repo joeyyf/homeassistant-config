@@ -13,5 +13,10 @@ backup:
   sequence:
   - service: shell_command.backup_hass_config
 
+set_commute_time_her:
+  alias: Pendel-Infos Puh
+  sequence:
+  - service: shell_command.set_commute_time_her_shell
+
 gasstation:
   sequence:
