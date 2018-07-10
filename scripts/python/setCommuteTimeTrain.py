@@ -8,7 +8,8 @@ import schiene
 
 def main(argv):
     sensor_name_route_time = ""
-    sensor_name_route_delay = ""
+    sensor_name_route_delay_from = ""
+    sensor_name_route_delay_to = ""
     from_station = ""
     to_station = ""
     region = ""
@@ -17,14 +18,14 @@ def main(argv):
 
     try:
         opts, args = getopt.getopt(
-            argv, "hu:p:f:t:s:d:", ["apiurl=", "password="])
+            argv, "hu:p:f:t:s:d:z:", ["apiurl=", "password="])
     except getopt.GetoptError:
-        print("test.py -u <api url> -p <password> -f <from_station> -t <to_station> -s <sensor_name_time> -d <sensor_name_delay>")
+        print("test.py -u <api url> -p <password> -f <from_station> -t <to_station> -s <sensor_name_time> -d <sensor_name_delay_from> -z <sensor_name_delay_to>")
         sys.exit(2)
 
     for opt, arg in opts:
         if opt == '-h':
-            print("test.py -u <api url> -p <password> -f <from_station> -t <to_station> -s <sensor_name_time> -d <sensor_name_delay>")
+            print("test.py -u <api url> -p <password> -f <from_station> -t <to_station> -s <sensor_name_time> -d <sensor_name_delay_from> -z <sensor_name_delay_to>")
             sys.exit()
         elif opt in ("-u", "--apiurl"):
             apiurl = arg
@@ -37,7 +38,9 @@ def main(argv):
         elif opt in ("-s"):
             sensor_name_route_time = "sensor.{0}".format(arg)
         elif opt in ("-d"):
-            sensor_name_route_delay = "sensor.{0}".format(arg)
+            sensor_name_route_delay_from = "sensor.{0}".format(arg)
+        elif opt in ("-z"):
+            sensor_name_route_delay_to = "sensor.{0}".format(arg)
 
     routeData = getRouteData(from_station, to_station)
     nextRoute = routeData[0]
@@ -51,7 +54,8 @@ def main(argv):
         departure = nextRoute.get('departure')
 
         setSensorState(apiurl, password, sensor_name_route_time, str(departure))
-        #setSensorState(apiurl, password, sensor_name_route_distance, str(route_distance))
+        setSensorState(apiurl, password, sensor_name_route_delay_from, str(delay_departure))
+        setSensorState(apiurl, password, sensor_name_route_delay_to, str(delay_arrival))
 
 
 def getRouteData(from_station, to_station):

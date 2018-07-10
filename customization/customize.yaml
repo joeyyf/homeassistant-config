@@ -101,10 +101,17 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.commute_delay_his_template:
+  friendly_name: Verspätung
+  icon: mdi:timer-sand
+
 sensor.commute_departure_his_template:
   friendly_name: Abfahrt
   icon: mdi:train
-  unit_of_measurement: Uhr
+
+sensor.commute_timestamp_his_template:
+  friendly_name: Aktualisiert am
+  icon: mdi:calendar-clock
 
 sensor.commute_timestamp_her_template:
   friendly_name: Aktualisiert am

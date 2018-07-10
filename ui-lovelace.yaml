@@ -136,13 +136,21 @@ views:
     id: commute
     icon: mdi:car
     cards:
-      #- type: 'custom:state-card-gasstation'
-      #  entity: script.gasstation
+      - type: picture-elements
+        title: Tankstellen
+        image: /local/images/hometown_map.png
+        elements:
+          - type: state-label
+            entity: sensor.cpu_load_total
+            style:
+              top: 50%
+              left: 50%
 
       - type: entities
         title: Pendelei Joey
         entities:
           - sensor.commute_departure_his_template
+          - sensor.commute_delay_his_template
           - script.set_commute_time_his_shell
 
       - type: entities
