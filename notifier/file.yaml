@@ -1,0 +1,4 @@
+- name: filenotifier
+  platform: file
+  filename: notifications.txt
+  timestamp: True

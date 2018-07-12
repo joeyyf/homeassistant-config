@@ -1,4 +1,6 @@
-name: Home
+resources:
+  - url: /local/gauge-card.js?v=1
+    type: js
 views:
   - title: Home
     id: home
@@ -72,6 +74,12 @@ views:
     id: network
     icon: mdi:network
     cards:
+      - type: history-graph
+        title: CPU (24h)
+        entities:
+          - sensor.cpu_load_total
+          - sensor.processor_use
+
       - type: entities
         title: Links
         entities:
@@ -108,6 +116,7 @@ views:
         entities:
           - sensor.memory_use_percent
           - sensor.processor_use
+          - sensor.cpu_temp
           - sensor.network_in
           - sensor.network_out
           - sensor.last_boot
@@ -136,21 +145,15 @@ views:
     id: commute
     icon: mdi:car
     cards:
-      - type: picture-elements
-        title: Tankstellen
-        image: /local/images/hometown_map.png
-        elements:
-          - type: state-label
-            entity: sensor.cpu_load_total
-            style:
-              top: 50%
-              left: 50%
+      #- type: 'custom:state-card-gasstation'
+      #  entity: script.gasstation
 
       - type: entities
         title: Pendelei Joey
         entities:
           - sensor.commute_departure_his_template
           - sensor.commute_delay_his_template
+          - sensor.commute_timestamp_his_template
           - script.set_commute_time_his_shell
 
       - type: entities
@@ -160,6 +163,36 @@ views:
           - sensor.commute_distance_her_template
           - sensor.commute_timestamp_her_template
           - script.set_commute_time_her
+
+      - type: picture-elements
+        title: Tankstellen
+        image: /local/images/hometown_gasstations.png
+        elements:
+          - type: state-label
+            entity: sensor.gasstation_1_e5_template
+            style:
+              top: 7%
+              left: 45%
+          - type: state-label
+            entity: sensor.gasstation_2_e5_template
+            style:
+              top: 69%
+              left: 39%
+          - type: state-label
+            entity: sensor.gasstation_3_e5_template
+            style:
+              top: 53%
+              left: 51%
+          - type: state-label
+            entity: sensor.gasstation_4_e5_template
+            style:
+              top: 25%
+              left: 75%
+          - type: state-label
+            entity: sensor.gasstation_5_e5_template
+            style:
+              top: 19%
+              left: 19%
 
       - type: vertical-stack
         cards:
@@ -205,27 +238,24 @@ views:
         title: Theme
         entities:
           - input_select.hass_template
-          - automation.theme__aendern
-          - automation.theme__nachttag
-          - automation.theme__tagnacht
 
       - type: entities
         title: Netzwerk Alarm
         entities:
           - input_number.netmonitor_downrate_current_alarm_max
-          - automation.netzwerk__alarm
 
       - type: entities
         title: Telefon
         entities:
           - variable.last_caller
           - sensor.incomingcaller_template
-          - automation.telefon__verpasster_anruf
-          - automation.telefon__einkommender_anruf_protokoll
 
-      - type: entities
-        title: Katzen
-        entities:
-          - automation.katzenbrunnen__anzeige
-          - automation.katzenbrunnen__stundlich_automatisch_anaus
-          - automation.katzenbrunnen__tts
+  - title: Test
+    id: test
+    icon: mdi:test-tube
+    cards:
+      - type: "custom:gauge-card"
+        title: Temp Büro
+        entity: sensor.office_temperature_template
+        min: 12
+        max: 32

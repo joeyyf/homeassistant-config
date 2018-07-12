@@ -56,20 +56,27 @@
       unit_of_measurement: 'Mbit/s'
       value_template: "{{ (states.sensor.netmonitor.attributes.transmission_rate_down * 8 / 1000 / 1000 | float) | round(1) }}"
 
-    gasprices_price_01_template:
-      value_template: '{{ states.sensor.gasprices.attributes.stations[0]["e5"] }}'
+    gasstation_1_e5_template:
+      friendly_name: 'Agip'
       unit_of_measurement: '€'
-      entity_id: sensor.gasprices
+      value_template: '{{ states.sensor.fuel.attributes["prices"]["29e4d593-c5b6-49eb-a23d-53a1668a18c3"]["e5"]}}'
 
-    gasprices_name_01_template:
-      value_template: '{{ states.sensor.gasprices.attributes.stations[0]["name"].title() }}'
-      entity_id: sensor.gasprices
-
-    gasprices_price_02_template:
-      value_template: '{{ states.sensor.gasprices.attributes.stations[1]["e5"] }}'
+    gasstation_2_e5_template:
+      friendly_name: 'Aral'
       unit_of_measurement: '€'
-      entity_id: sensor.gasprices
+      value_template: '{{ states.sensor.fuel.attributes["prices"]["d269fdfc-1ec1-429e-8101-9406a818ba7c"]["e5"]}}'
 
-    gasprices_name_02_template:
-      value_template: '{{ states.sensor.gasprices.attributes.stations[1]["name"].title() }}'
-      entity_id: sensor.gasprices
+    gasstation_3_e5_template:
+      friendly_name: 'BK'
+      unit_of_measurement: '€'
+      value_template: '{{ states.sensor.fuel.attributes["prices"]["40c6c30f-5150-4272-bd65-5731750edd0f"]["e5"]}}'
+
+    gasstation_4_e5_template:
+      friendly_name: 'Allguth'
+      unit_of_measurement: '€'
+      value_template: '{{ states.sensor.fuel.attributes["prices"]["15e3172e-6b83-4558-90c8-f59ea7c58142"]["e5"]}}'
+
+    gasstation_5_e5_template:
+      friendly_name: 'Bavaria Petrol'
+      unit_of_measurement: '€'
+      value_template: '{{ states.sensor.fuel.attributes["prices"]["d2838dea-4fb1-4e48-991d-c9ad89646e40"]["e5"]}}'

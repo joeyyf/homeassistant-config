@@ -13,6 +13,11 @@ backup:
   sequence:
   - service: shell_command.backup_hass_config
 
+backup_nodered:
+  alias: Backup NodeRed config directory
+  sequence:
+  - service: shell_command.backup_nodered_config
+
 set_commute_time_her:
   alias: Pendel-Infos aktualisieren
   sequence:

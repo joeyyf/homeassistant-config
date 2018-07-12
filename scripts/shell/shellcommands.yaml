@@ -1,5 +1,6 @@
 tts_catfountain_on: !secret alexa_script_path_01
 tts_incoming_call: !secret alexa_script_path_02
 backup_hass_config: sudo tar --exclude='.homeassistant/home-assistant_v2.db' --exclude='.homeassistant/deps' --exclude='.homeassistant/home-assistant.log' --exclude='.homeassistant/.git' --exclude='.homeassistant/custom_components/__pycache__' --exclude='.homeassistant/www' --exclude-caches-all -czvf /media/nas_backup/hass_backup-$(date +%Y-%m-%d).tar.gz -T /home/homeassistant/files_to_backup.txt
+backup_nodered_config: sudo tar --exclude='/home/pi/.node-red/node_modules' -czvf /media/nas_backup/nodered_backup-$(date +%Y-%m-%d).tar.gz /home/pi/.node-red/
 set_commute_time_her_shell: !secret commuteTimeHer_script_path
 set_commute_time_his_shell: !secret commuteTimeHis_script_path

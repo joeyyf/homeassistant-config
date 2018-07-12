@@ -101,6 +101,10 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.cpu_temp:
+  friendly_name: CPU Temp.
+  icon: mdi:thermometer
+
 sensor.commute_delay_his_template:
   friendly_name: Verspätung
   icon: mdi:timer-sand
