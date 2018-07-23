@@ -1,3 +1,7 @@
 - platform: tplink
   name: kitchen_01
   host: !secret ip_kitchen_01
+
+- platform: tplink
+  name: livingroom_01
+  host: !secret ip_livingroom_01

@@ -88,6 +88,10 @@ group.input_telephone:
   friendly_name: Telefon
 
 # switches
+switch.livingroom_01:
+  friendly_name: Deckenfluter
+  icon: mdi:lightbulb
+
 switch.kitchen_01:
   friendly_name: Katzenbrunnen
   icon: mdi:cat

@@ -13,6 +13,11 @@ views:
           - device_tracker.her_iphone
 
       - type: entities
+        title: Wohnzimmer
+        entities:
+          - switch.livingroom_01
+
+      - type: entities
         title: Büro
         entities:
           - sensor.office_temperature_template
