@@ -47,11 +47,17 @@ views:
           - sensor.weather_yr_temperature
           - sensor.office_temperature_template
 
+      - type: entities
+        title: Sonne
+        entities:
+          - sun.sun
+          - sensor.next_sunset_template
+          - sensor.next_sunrise_template
+
       - type: glance
         title: Wetter YR
         entities:
           - sensor.weather_yr_symbol
-          - sun.sun
           - sensor.weather_yr_temperature
           - sensor.weather_yr_cloudiness
           - sensor.weather_yr_humidity

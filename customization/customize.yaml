@@ -105,6 +105,14 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.next_sunrise_template:
+  friendly_name: Sonnenaufgang
+  icon: mdi:weather-sunset-up
+
+sensor.next_sunset_template:
+  friendly_name: Sonnenuntergang
+  icon: mdi:weather-sunset-down
+
 sensor.cpu_temp:
   friendly_name: CPU Temp.
   icon: mdi:thermometer
