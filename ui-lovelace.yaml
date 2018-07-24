@@ -256,6 +256,11 @@ views:
           - automation.forward_notifications_to_notifynotifications
 
       - type: entities
+        title: Notifications
+        entities:
+          - sensor.filed_notifications
+
+      - type: entities
         title: Netzwerk Alarm
         entities:
           - input_number.netmonitor_downrate_current_alarm_max

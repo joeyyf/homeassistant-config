@@ -105,6 +105,10 @@ sun.sun:
   friendly_name: Sonne
 
 # sensors
+sensor.filed_notifications:
+  friendly_name: Notifications
+  icon: mdi:comment-text
+
 sensor.next_sunrise_template:
   friendly_name: Sonnenaufgang
   icon: mdi:weather-sunset-up

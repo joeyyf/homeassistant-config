@@ -1,0 +1,3 @@
+- platform: file
+  file_path: /home/homeassistant/.homeassistant/notifications.txt
+  name: filed_notifications
