@@ -251,6 +251,11 @@ views:
           - input_select.hass_template
 
       - type: entities
+        title: Automationen
+        entities:
+          - automation.forward_notifications_to_notifynotifications
+
+      - type: entities
         title: Netzwerk Alarm
         entities:
           - input_number.netmonitor_downrate_current_alarm_max

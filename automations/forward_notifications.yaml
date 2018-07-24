@@ -1,0 +1,16 @@
+- alias: 'Forward notifications to notify.notifications'
+  id: 'forward_notifications'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: call_service
+    event_data:
+      domain: notify
+      service: notify
+  condition:
+  action:
+    service: notify.filenotifier
+    data_template:
+      message: >
+        {% set message = trigger.event.data.service_data.message %}
+          {{ message }}
