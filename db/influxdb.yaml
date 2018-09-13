@@ -1,0 +1,8 @@
+host: localhost
+port: 8086
+database: home-assistant
+username: !secret influxdb_user
+password: !secret influxdb_pw
+exclude:
+  domains:
+     - automation
