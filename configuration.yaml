@@ -58,8 +58,10 @@ logger:
 #  logs:
 #    homeassistant.components.automation: debug
 
-whitelist_external_dirs:
-  - /home/homeassistant/.homeassistant/
+#whitelist_external_dirs:
+# - /home/homeassistant/.homeassistant/
+
+influxdb: !include db/influxdb.yaml
 
 wake_on_lan:
 sensor: !include_dir_merge_list sensors/normal/
