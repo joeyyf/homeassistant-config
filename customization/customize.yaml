@@ -88,6 +88,18 @@ group.input_telephone:
   friendly_name: Telefon
 
 # switches
+switch.docker_portainer:
+  friendly_name: Portainer
+  icon: mdi:ship-wheel
+
+switch.docker_organizr:
+  friendly_name: Organizr
+  icon: mdi:stack-exchange
+
+switch.docker_calibre:
+  friendly_name: Calibre-Web
+  icon: mdi:book-open-page-variant
+
 switch.livingroom_01:
   friendly_name: Deckenfluter
   icon: mdi:lightbulb

@@ -280,3 +280,10 @@ views:
         entity: sensor.office_temperature_template
         min: 12
         max: 32
+
+      - type: entities
+        title: Docker Container
+        entities:
+          - switch.docker_calibre
+          - switch.docker_portainer
+          - switch.docker_organizr
