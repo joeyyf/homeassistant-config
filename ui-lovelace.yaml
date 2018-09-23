@@ -14,11 +14,13 @@ views:
 
       - type: entities
         title: Wohnzimmer
+        show_header_toggle: false
         entities:
           - switch.livingroom_01
 
       - type: entities
         title: Büro
+        show_header_toggle: false
         entities:
           - sensor.office_temperature_template
           - sensor.office_humidity_template
@@ -27,6 +29,7 @@ views:
 
       - type: entities
         title: Küche
+        show_header_toggle: false
         entities:
           - switch.kitchen_01
 
@@ -121,6 +124,15 @@ views:
           - sensor.piholemonitor_ads_percentage_blocked_today
           - sensor.piholemonitor_dns_unique_clients
           - sensor.piholemonitor_domains_blocked
+
+      - type: entities
+        title: Docker Container
+        show_header_toggle: false
+        entities:
+          - switch.docker_calibre
+          - switch.docker_portainer
+          - switch.docker_organizr
+          - switch.docker_gogs
 
       - type: entities
         title: Home Assistant
@@ -280,10 +292,3 @@ views:
         entity: sensor.office_temperature_template
         min: 12
         max: 32
-
-      - type: entities
-        title: Docker Container
-        entities:
-          - switch.docker_calibre
-          - switch.docker_portainer
-          - switch.docker_organizr

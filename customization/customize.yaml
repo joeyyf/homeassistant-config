@@ -88,6 +88,10 @@ group.input_telephone:
   friendly_name: Telefon
 
 # switches
+switch.docker_gogs:
+  friendly_name: Gogs Git
+  icon: mdi:git
+
 switch.docker_portainer:
   friendly_name: Portainer
   icon: mdi:ship-wheel

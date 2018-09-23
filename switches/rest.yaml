@@ -1,5 +1,5 @@
 - platform: rest
-  resource: http://192.168.178.20:8126/container/calibre-web
+  resource: http://192.168.178.20:8126/container/calibre
   name: docker_calibre
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
@@ -15,6 +15,13 @@
 - platform: rest
   resource: http://192.168.178.20:8126/container/organizr
   name: docker_organizr
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://192.168.178.20:8126/container/gogs
+  name: docker_gogs
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
