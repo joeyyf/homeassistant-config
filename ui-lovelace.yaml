@@ -133,6 +133,8 @@ views:
           - switch.docker_portainer
           - switch.docker_organizr
           - switch.docker_gogs
+          - switch.docker_lazylibrarian
+          - switch.docker_jenkins
 
       - type: entities
         title: Home Assistant

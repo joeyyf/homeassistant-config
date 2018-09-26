@@ -88,6 +88,14 @@ group.input_telephone:
   friendly_name: Telefon
 
 # switches
+switch.docker_jenkins:
+  friendly_name: Jenkins
+  icon: mdi:source-branch
+
+switch.docker_lazylibrarian:
+  friendly_name: LazyLibrarian
+  icon: mdi:library
+
 switch.docker_gogs:
   friendly_name: Gogs Git
   icon: mdi:git
