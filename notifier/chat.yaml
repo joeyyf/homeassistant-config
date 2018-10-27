@@ -1,0 +1,6 @@
+- platform: rocketchat
+  name: rocketchat
+  url: http://fileserver.local:3000
+  username: homeassistant
+  password: !secret rocketchat_password
+  room: homeassistant
