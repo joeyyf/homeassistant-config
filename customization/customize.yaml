@@ -88,16 +88,20 @@ group.input_telephone:
   friendly_name: Telefon
 
 # switches
-switch.docker_jenkins:
-  friendly_name: Jenkins
-  icon: mdi:source-branch
+switch.docker_rocketchat:
+  friendly_name: Rocketchat
+  icon: mdi:forum
+
+switch.docker_rainloop:
+  friendly_name: Rainloop
+  icon: mdi:email
 
 switch.docker_lazylibrarian:
   friendly_name: LazyLibrarian
   icon: mdi:library
 
-switch.docker_gogs:
-  friendly_name: Gogs Git
+switch.docker_gitlab:
+  friendly_name: Gitlab
   icon: mdi:git
 
 switch.docker_portainer:

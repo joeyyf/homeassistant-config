@@ -1,2 +1,5 @@
 weather_customcardhack:
   name: Custom weather card
+
+test_dummy:
+  name: Test dummy input

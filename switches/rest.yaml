@@ -1,41 +1,48 @@
 - platform: rest
-  resource: http://192.168.178.20:8126/container/calibre
+  resource: http://192.168.178.46:8126/container/calibre
   name: docker_calibre
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://192.168.178.20:8126/container/portainer
+  resource: http://192.168.178.46:8126/container/portainer
   name: docker_portainer
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://192.168.178.20:8126/container/organizr
+  resource: http://192.168.178.46:8126/container/organizr
   name: docker_organizr
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://192.168.178.20:8126/container/gogs
-  name: docker_gogs
+  resource: http://192.168.178.46:8126/container/gitlab
+  name: docker_gitlab
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://192.168.178.20:8126/container/lazylibrarian
+  resource: http://192.168.178.46:8126/container/lazylibrarian
   name: docker_lazylibrarian
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://192.168.178.20:8126/container/jenkins
-  name: docker_jenkins
+  resource: http://192.168.178.46:8126/container/rainloop
+  name: docker_rainloop
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://192.168.178.46:8126/container/rocketchat
+  name: docker_rocketchat
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'

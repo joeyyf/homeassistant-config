@@ -132,9 +132,10 @@ views:
           - switch.docker_calibre
           - switch.docker_portainer
           - switch.docker_organizr
-          - switch.docker_gogs
+          - switch.docker_gitlab
           - switch.docker_lazylibrarian
-          - switch.docker_jenkins
+          - switch.docker_rainloop
+          - switch.docker_rocketchat
 
       - type: entities
         title: Home Assistant
@@ -289,6 +290,11 @@ views:
     id: test
     icon: mdi:test-tube
     cards:
+      - type: entities
+        title: Test
+        entities:
+          - input_boolean.test_dummy
+
       - type: "custom:gauge-card"
         title: Temp Büro
         entity: sensor.office_temperature_template
