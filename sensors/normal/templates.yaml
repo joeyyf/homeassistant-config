@@ -21,20 +21,6 @@
     zerosensor01_sensor_template:
       value_template: "{% if is_state('device_tracker.zerosensor01', 'home') %}online{% else %}offline{% endif %}"
 
-    commute_departure_his_template: #sensor.commute_departure_his is a HTTP sensor - only initialized by api call
-      value_template: "{% if states.sensor.commute_departure_his is defined %} {{ states.sensor.commute_departure_his.state }} Uhr {% else %}Unbekannt{% endif %}"
-
-    commute_delay_his_template: #sensor.commute_delayto_his & sensor.commute_delayto_his are HTTP sensors - only initialized by api call
-      value_template: >-
-        {% if states.sensor.commute_delayto_his is defined %}
-          Ab: {{ states.sensor.commute_delayto_his.state }} Min., An: {{ states.sensor.commute_delayfrom_his.state }} Min.
-        {% else %}
-          Unbekannt
-        {% endif %}
-
-    commute_timestamp_his_template:
-      value_template: "{% if states.sensor.commute_departure_his is defined %} {{ states.sensor.commute_departure_his.last_updated.strftime('%d.%m.%Y %H:%M:%S') }} {% else %}Unbekannt{% endif %}"
-
     commute_time_her_template: #sensor.commute_time_her is a HTTP sensor - only initialized by api call
       value_template: "{% if states.sensor.commute_time_her is defined %} {{ states.sensor.commute_time_her.state | round(0) }} {% else %}Unbekannt{% endif %}"
 
@@ -43,6 +29,15 @@
 
     commute_timestamp_her_template: #sensor.commute_time_her is a HTTP sensor - only initialized by api call
       value_template: "{% if states.sensor.commute_time_her is defined %} {{ states.sensor.commute_time_her.last_updated.strftime('%d.%m.%Y %H:%M:%S') }} {% else %}Unbekannt{% endif %}"
+
+    commute_time_his_template: #sensor.commute_time_his is a HTTP sensor - only initialized by api call
+      value_template: "{% if states.sensor.commute_time_his is defined %} {{ states.sensor.commute_time_his.state | round(0) }} {% else %}Unbekannt{% endif %}"
+
+    commute_distance_his_template: #sensor.commute_distance_his is a HTTP sensor - only initialized by api call
+      value_template: "{% if states.sensor.commute_distance_his is defined %} {{ states.sensor.commute_distance_his.state | round(2) }} {% else %}Unbekannt{% endif %}"
+
+    commute_timestamp_his_template: #sensor.commute_time_his is a HTTP sensor - only initialized by api call
+      value_template: "{% if states.sensor.commute_time_his is defined %} {{ states.sensor.commute_time_his.last_updated.strftime('%d.%m.%Y %H:%M:%S') }} {% else %}Unbekannt{% endif %}"
 
     office_temperature_template: #sensor.office_temperature is a HTTP sensor - only initialized by api call
       value_template: "{% if states.sensor.office_temperature is defined %} {{ states.sensor.office_temperature.state | round(1) }} {% else %}Unbekannt{% endif %}"

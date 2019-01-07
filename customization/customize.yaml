@@ -149,18 +149,6 @@ sensor.cpu_temp:
   friendly_name: CPU Temp.
   icon: mdi:thermometer
 
-sensor.commute_delay_his_template:
-  friendly_name: Verspätung
-  icon: mdi:timer-sand
-
-sensor.commute_departure_his_template:
-  friendly_name: Abfahrt
-  icon: mdi:train
-
-sensor.commute_timestamp_his_template:
-  friendly_name: Aktualisiert am
-  icon: mdi:calendar-clock
-
 sensor.commute_timestamp_her_template:
   friendly_name: Aktualisiert am
   icon: mdi:calendar-clock
@@ -171,6 +159,20 @@ sensor.commute_distance_her_template:
   unit_of_measurement: km
 
 sensor.commute_time_her_template:
+  friendly_name: Zeit
+  icon: mdi:timer
+  unit_of_measurement: Min.
+
+sensor.commute_timestamp_his_template:
+  friendly_name: Aktualisiert am
+  icon: mdi:calendar-clock
+
+sensor.commute_distance_his_template:
+  friendly_name: Strecke
+  icon: mdi:map-marker-distance
+  unit_of_measurement: km
+
+sensor.commute_time_his_template:
   friendly_name: Zeit
   icon: mdi:timer
   unit_of_measurement: Min.
